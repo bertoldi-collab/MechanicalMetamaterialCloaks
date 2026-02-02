@@ -1,0 +1,41 @@
+[project]
+name = "MechanicalMetamaterialCloaks"
+version = "0.1.0"
+description = "Inverse-design of nonlinear mechanical metamaterial cloaks"
+authors = [
+    { name = "Giovanni Bordiga", email = "gbordiga@seas.harvard.edu" },
+    { name = "Jean-Gabriel Argaud", email = "jean-gabriel.argaud@etu.minesparis.psl.eu" },
+]
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = [
+    "mechanical-metamaterials",
+    "cloaking",
+    "inverse-design",
+    "nonlinear-mechanics",
+    "automatic-differentiation",
+]
+requires-python = ">=3.10"
+
+[tool.poetry.dependencies]
+python        = ">=3.10,<3.12"
+jax-md        = { git = "https://github.com/GiovanniBordiga/jax-md.git", branch = "main" }
+matplotlib    = "^3.5.0"
+ipykernel     = "^6.5.1"
+SciencePlots  = "^1.0.9"
+ipywidgets    = "^7.6.5"
+tqdm          = "^4.62.3"
+opencv-python = "^4.5.5"
+ipympl        = "^0.9.1"
+nlopt         = "^2.7.1"
+pandas        = "^1.4.4"
+Shapely       = "^1.8.4"
+
+
+[build-system]
+requires      = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^9.0.2"
