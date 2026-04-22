@@ -9,10 +9,7 @@ from jax import vmap
 from jax_md import smap
 
 from mechanicalmetamaterialcloaks.geometry import compute_edge_angles, rotation_matrix
-from mechanicalmetamaterialcloaks.kinematics import (
-    block_to_node_kinematics,
-    block_to_dipole_configuration,
-)
+from mechanicalmetamaterialcloaks.kinematics import block_to_node_kinematics
 from mechanicalmetamaterialcloaks.utils import ControlParams
 
 
