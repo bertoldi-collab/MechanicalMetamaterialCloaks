@@ -69,7 +69,7 @@ def generate_polygons(
         ]
     else:
         polygons = [
-            Polygon(vertices + centroid, True)
+            Polygon(vertices + centroid)
             for vertices, centroid in zip(centroid_node_vectors, block_centroids)
         ]
 
