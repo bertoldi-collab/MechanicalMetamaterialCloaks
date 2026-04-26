@@ -594,7 +594,6 @@ def generate_animation(
     field,
     out_filename,
     field_values=None,
-    deformed=False,
     frame_range=None,
     figsize=None,
     xlim=None,
@@ -613,7 +612,6 @@ def generate_animation(
     docstring
     """
 
-    # FIXME: deformed is currently unused!
     _field_values, min_value, max_value, fig, axes, frames = prepare_solution_figure(
         data,
         field,
