@@ -569,6 +569,10 @@ class ForwardProblem:
     @staticmethod
     def from_data(problem_data):
         problem_data = ForwardProblem(**problem_data)
+        problem_data.horizontal_vertical_shifts_mg = jax.tree.map(
+            lambda x: jnp.array(x),
+            problem_data.horizontal_vertical_shifts_mg,
+        )
         problem_data.is_setup = False
         return problem_data
 
@@ -580,11 +584,19 @@ class ForwardProblem:
         # Convert solution data to named tuple
         if dict_in["solution_data"] is not None:
             if type(dict_in["solution_data"]) is dict:
-                dict_in["solution_data"] = SolutionData(
-                    **dict_in["solution_data"])
+                dict_in["solution_data"] = {
+                    key: SolutionData(
+                        **solution) if type(solution) is not list else [SolutionData(**s) for s in solution]
+                    for key, solution in dict_in["solution_data"].items()
+                }
             elif type(dict_in["solution_data"]) is list:
-                dict_in["solution_data"] = [SolutionData(
-                    **solution) for solution in dict_in["solution_data"]]
+                dict_in["solution_data"] = [
+                    SolutionData(**solution) for solution in dict_in["solution_data"]
+                ]
+        dict_in["horizontal_vertical_shifts_mg"] = jax.tree.map(
+            lambda x: jnp.array(x),
+            dict_in["horizontal_vertical_shifts_mg"],
+        )
         problem_data = ForwardProblem(**dict_in)
         problem_data.is_setup = False
         return problem_data
@@ -597,6 +609,11 @@ class ForwardProblem:
         elif type(dict_out["solution_data"]) is list:
             dict_out["solution_data"] = [solution._asdict()
                                          for solution in dict_out["solution_data"]]
+        elif type(dict_out["solution_data"]) is dict:
+            dict_out["solution_data"] = {
+                key: solution._asdict() if type(solution) is not list else [s._asdict() for s in solution]
+                for key, solution in dict_out["solution_data"].items()
+            }
         return dict_out
 
 
@@ -1148,6 +1165,10 @@ class OptimizationProblem:
         )
         optimization_data.forward_input = ForwardInput(
             **optimization_data.forward_input
+        )
+        # Ensure design values are iterable of jax arrays
+        optimization_data.design_values = jax.tree.map(
+            lambda x: jnp.array(x), optimization_data.design_values
         )
         optimization_data.is_setup = False
         return optimization_data
