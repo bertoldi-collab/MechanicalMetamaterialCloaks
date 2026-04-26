@@ -541,7 +541,7 @@ class Geometry:
         Computes reference coonfiguration xy limits.
         """
 
-        vertices = self.get_reference_geometry(*args).reshape((self.n_nodes, 2))
+        vertices = self.get_reference_geometry(*args).reshape((-1, 2))
         return compute_xy_limits(vertices)
 
     def get_parametrization(self) -> Tuple[Callable, Callable, Callable, Callable]:
