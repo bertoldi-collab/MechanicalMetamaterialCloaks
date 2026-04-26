@@ -689,7 +689,7 @@ def generate_animation(
     anim.save(str(out_path), writer="ffmpeg", fps=fps, dpi=dpi)
 
 
-def generate_several_animations_for_mechanical_cloak(
+def generate_several_animations_with_traces(
     list_data,
     field,
     trace_dof: int,
