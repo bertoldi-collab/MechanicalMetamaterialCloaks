@@ -775,7 +775,6 @@ if __name__ == "__main__":
         data=solution_data,
         field="u",
         out_filename=args.save_dir + "/tracking_animation",
-        deformed=True,
         xlim=xylim[0],
         ylim=xylim[1],
         dpi=300,
