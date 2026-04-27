@@ -1,4 +1,4 @@
-# Nonlinear Mechanical Metamaterial Cloaks
+# Nonlinear mechanical metamaterial cloaks
 
 ![Made with Python](https://img.shields.io/badge/Made%20with-Python-blue?logo=python&logoColor=ecf0f1&labelColor=34495e)
 [![Paper](https://img.shields.io/badge/Paper-10.1002/adfm.202522895-blue?logoColor=ecf0f1&labelColor=34495e)](https://doi.org/10.1002/adfm.202522895)
