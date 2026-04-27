@@ -567,19 +567,6 @@ class ForwardProblem:
         )
 
     @staticmethod
-    def from_data(problem_data):
-        problem_data = ForwardProblem(**problem_data)
-        problem_data.horizontal_vertical_shifts_mg = jax.tree.map(
-            lambda x: jnp.array(x),
-            problem_data.horizontal_vertical_shifts_mg,
-        )
-        problem_data.is_setup = False
-        return problem_data
-
-    def to_data(self):
-        return ForwardProblem(**dataclasses.asdict(self))
-
-    @staticmethod
     def from_dict(dict_in):
         # Convert solution data to named tuple
         if dict_in["solution_data"] is not None:
@@ -1157,24 +1144,6 @@ class OptimizationProblem:
             raise ValueError(
                 f"type_force {type_force} not recognized. Must be 'resulting' to get the resulting force on the column, or 'local' to get the local force."
             )
-
-    @staticmethod
-    def from_data(optimization_data):
-        optimization_data.forward_problem = ForwardProblem.from_data(
-            optimization_data.forward_problem
-        )
-        optimization_data.forward_input = ForwardInput(
-            **optimization_data.forward_input
-        )
-        # Ensure design values are iterable of jax arrays
-        optimization_data.design_values = jax.tree.map(
-            lambda x: jnp.array(x), optimization_data.design_values
-        )
-        optimization_data.is_setup = False
-        return optimization_data
-
-    def to_data(self):
-        return OptimizationProblem(**dataclasses.asdict(self))
 
     @staticmethod
     def from_dict(dict_in):
