@@ -73,6 +73,19 @@ To access and visualize the data:
 - Use the [notebooks](notebooks) to load and visualize optimization results.
 - Explore experimental results under [exp](exp).
 
+Once the data is in place, the folder tree should look like this:
+
+```
+MechanicalMetamaterialCloaks/
+├── data/
+├── exp/
+├── mechanicalmetamaterialcloaks/
+├── notebooks/
+├── out/
+├── problems/
+...
+```
+
 ## ⬇️ Installation
 
 ### MechanicalMetamaterialCloaks only
