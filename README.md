@@ -9,7 +9,8 @@
 
 **Inverse-design of nonlinear mechanical metamaterial cloaks**
 
-> TODO: Add hero media (video/GIF/image) showcasing static and dynamic cloaking.
+https://github.com/user-attachments/assets/e95a7768-0281-4fd5-a08a-de5e76494f11
+
 
 ## 🌅 Why nonlinear mechanical metamaterial cloaks?
 
