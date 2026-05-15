@@ -127,6 +127,16 @@ To get started:
 
 </details>
 
+## 👥 Contributors
+
+| Contributor | Affiliation | Contributions |
+|---|---|---|
+| [Giovanni Bordiga](https://github.com/GiovanniBordiga) | Harvard University | Research design, simulation & optimization code, data analysis |
+| [Jean-Gabriel Argaud](https://github.com/JeanGabriel2000) | MINES Paris – PSL Université / Harvard University | Simulation & optimization code, fabrication, experiments, data analysis |
+| [Audrey A. Watkins](https://scholar.google.com/citations?hl=en&user=L8qJurkAAAAJ) | Harvard University | Fabrication, experiments, data analysis |
+| [Vincent Tournat](https://scholar.google.com/citations?hl=en&user=QyTUCkgAAAAJ) | Harvard University / Le Mans Université | Research design, experiments, data analysis |
+| [Katia Bertoldi](https://scholar.google.com/citations?user=Jt1sCk8AAAAJ&hl=en) | Harvard University | Research design, data analysis |
+
 ## 📝 Citation
 
 If you use this code in your research or anywhere, please cite the paper:
